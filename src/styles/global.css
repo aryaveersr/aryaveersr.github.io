@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    font-size: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+    line-height: 1.1;
+}
+
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}

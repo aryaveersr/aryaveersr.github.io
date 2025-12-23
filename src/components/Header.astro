@@ -1,0 +1,53 @@
+---
+const links = [
+    { name: "Home", href: "/" },
+    { name: "Github", href: "https://github.com/aryaveersr" },
+    { name: "Mail", href: "mailto:me.aryaveer@gmail.com" },
+];
+---
+
+<header>
+    <a href="/">AryaveerSR</a>
+    <nav>
+        <ul>
+            {
+                links.map(({ href, name }) => (
+                    <li>
+                        <a {href}>{name}</a>
+                    </li>
+                ))
+            }
+        </ul>
+    </nav>
+</header>
+
+<style>
+    header {
+        max-width: 48rem;
+        margin-inline: auto;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: #444;
+        transition: color 0.3s ease-in-out;
+    }
+
+    a:hover {
+        color: #000;
+    }
+</style>

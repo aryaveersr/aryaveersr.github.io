@@ -1,16 +1,15 @@
 ---
-
+import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Astro</title>
-    </head>
-    <body>
-        <h1>Astro</h1>
-    </body>
-</html>
+<BaseLayout>
+    <div class="landing">
+        <h1>Hi, I'm Aryaveer!</h1>
+        <p>
+            I'm an aspiring Software Developer from India! My current areas of
+            interest include Compilers, Operating Systems, and Game Development.
+            You can see what I'm working on right now on
+            <a href="https://github.com/aryaveersr">Github.</a>
+        </p>
+    </div>
+</BaseLayout>
