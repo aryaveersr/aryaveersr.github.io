@@ -1,0 +1,47 @@
+---
+import type { GetStaticPaths } from "astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+
+export const getStaticPaths = (async () => {
+    const notes = await getCollection("notes");
+
+    return notes.map((note) => ({
+        params: { id: note.id },
+        props: { note },
+    }));
+}) satisfies GetStaticPaths;
+
+const { note } = Astro.props;
+const { Content } = await render(note);
+---
+
+<BaseLayout title={note.data.title}>
+    <div class="header">
+        <h1>{note.data.title}</h1>
+        <time datetime={note.data.publishedOn.toISOString()}>
+            Published on
+            {note.data.publishedOn.toLocaleDateString()}
+        </time>
+        <p>{note.data.description}</p>
+    </div>
+    <hr />
+    <div>
+        <Content />
+    </div>
+</BaseLayout>
+
+<style>
+    .header p {
+        margin-top: 0;
+    }
+
+    .header time {
+        font-style: italic;
+        color: #555;
+    }
+
+    hr {
+        margin-block: 2.5rem;
+    }
+</style>

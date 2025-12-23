@@ -1,0 +1,79 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const notes = await getCollection("notes").then((notes) =>
+    notes.sort(
+        (a, b) => b.data.publishedOn.valueOf() - a.data.publishedOn.valueOf(),
+    ),
+);
+---
+
+<BaseLayout title="Notes">
+    <div class="landing">
+        <h1>Notes</h1>
+        <p>
+            I store short snippets of knowledge here for future reference for me
+            and (hopefully) other people.
+        </p>
+    </div>
+    <ul>
+        {
+            notes.map((note) => (
+                <li>
+                    <div>
+                        <a href={`/notes/${note.id}`}>
+                            <h3>{note.data.title}</h3>
+                        </a>
+                        <time datetime={note.data.publishedOn.toISOString()}>
+                            Published on
+                            {note.data.publishedOn.toLocaleDateString()}
+                        </time>
+                    </div>
+
+                    <p>{note.data.description}</p>
+                </li>
+            ))
+        }
+    </ul>
+</BaseLayout>
+
+<style>
+    .landing {
+        margin-bottom: 4rem;
+    }
+
+    ul {
+        padding: 1rem;
+    }
+
+    li div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h3 {
+        margin: 0px;
+    }
+
+    p {
+        margin-top: 0.5rem;
+    }
+
+    a {
+        color: #000;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
+
+    a:hover {
+        color: #555;
+    }
+
+    time {
+        font-style: italic;
+        color: #555;
+    }
+</style>
