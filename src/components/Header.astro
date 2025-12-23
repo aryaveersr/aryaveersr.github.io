@@ -13,7 +13,7 @@ const links = [
         <ul>
             {
                 links.map(({ href, name }) => (
-                    <li>
+                    <li data-active={href === Astro.url.pathname}>
                         <a {href}>{name}</a>
                     </li>
                 ))
@@ -48,7 +48,8 @@ const links = [
         transition: color 0.3s ease-in-out;
     }
 
-    a:hover {
+    a:hover,
+    li[data-active="true"] a {
         color: #000;
     }
 </style>
