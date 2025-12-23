@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
+import "@/styles/content.css";
 
 export const getStaticPaths = (async () => {
     const notes = await getCollection("notes");
@@ -26,7 +27,7 @@ const { Content } = await render(note);
         <p>{note.data.description}</p>
     </div>
     <hr />
-    <div>
+    <div class="content">
         <Content />
     </div>
 </BaseLayout>

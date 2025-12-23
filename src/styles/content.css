@@ -1,0 +1,12 @@
+.content h2 {
+    margin-top: 4rem;
+}
+
+.content pre {
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.content blockquote {
+    color: #444;
+}
