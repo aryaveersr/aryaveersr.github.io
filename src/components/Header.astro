@@ -13,7 +13,14 @@ const links = [
   <nav class="flex gap-8 text-sm">
     {
       links.map(({ label, href }) => (
-        <Link {href} icon={false} class="font-sans">
+        <Link
+          {href}
+          icon={false}
+          class:list={[
+            "font-sans",
+            Astro.url.pathname == href && "text-zinc-950 underline",
+          ]}
+        >
           {label.toUpperCase()}
         </Link>
       ))
