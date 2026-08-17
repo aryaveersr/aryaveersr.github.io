@@ -1,0 +1,54 @@
+[
+  {
+    "id": 0,
+    "name": "RGBLamp",
+    "pin": true,
+    "description": "A command-line application and library to control HID LampArray devices on Linux, written in Rust. The goal was to control the RGB backlight on my laptop from Linux, which I managed to achieve, and also learnt a lot about how Human Interface Devices (HID) work.",
+    "links": {
+      "github": "https://github.com/aryaveersr/rgblamp",
+      "crates.io": "https://crates.io/crates/rgblamp"
+    }
+  },
+  {
+    "id": 1,
+    "name": "lang-experiments",
+    "pin": true,
+    "description": "Less of a project and more of a code dumpyard, this contains my implementation of various lang-dev concepts in Rust. It includes a lexer and parser, (very) basic type checker, a compiler IR (based on Basic Blocks), and some simple optimizations like const-folding, dead code elimination and loop-invariant code motion. I mostly got bored around the code-gen part, though I would love to revisit this someday when I have the motivation to do so.",
+    "links": {
+      "github": "https://github.com/aryaveersr/lang-experiments"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Background Remover",
+    "description": "A tool to remove background from images using AI models running locally. The project can be deployed using Docker on, for eg. a homelab. It is written as a full-stack app using SvelteKit, and uses onnx-runtime and huggingface for the models.",
+    "links": {
+      "github": "https://github.com/aryaveersr/background-remover"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Interpreter",
+    "description": "My implementation of an interpreter for a language written in C. It follows Robert Nystrom's Crafting Interpreters book closely (great book; I wholeheartedly recommend reading it), with few cosmetic changes. This project both got me interested in language development, and demystified the C language for me at the same time.",
+    "links": {
+      "github": "https://github.com/aryaveersr/interpreter-c"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Bookmarks",
+    "description": "A website to sort large collections of bookmarks with a focus on efficiency. I made this for myself when I had over 1000 bookmarks, and it served the purpose well. It features instant previews, keybinds, and easy folder management. Once it fixed my problem though, I abandoned this one too, before I wrote any documentation for it. However, this is probably has a lot of potential (couldn't find any other tools that solve this problem even now) and I would like to redo it as a more finished project sometime.",
+    "links": {
+      "github": "https://github.com/aryaveersr/bookmarks",
+      "website": "https://aryaveersr.github.io/bookmarks/"
+    }
+  },
+  {
+    "id": 5,
+    "name": "StopThemTabs",
+    "description": "A browser extension with the explicit purpose to stop all popups that open in a new tab. It does its intended job fairly well.",
+    "links": {
+      "github": "https://github.com/aryaveersr/StopThemTabs"
+    }
+  }
+]

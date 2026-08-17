@@ -1,0 +1,22 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { Icon } from "astro-icon/components";
+
+type Props = HTMLAttributes<"a">;
+const { class: classNames, ...rest } = Astro.props;
+---
+
+<a
+  {...rest}
+  class:list={[
+    "relative inline-flex items-baseline font-medium text-zinc-500 decoration-current hover:text-zinc-950 hover:underline",
+    classNames,
+  ]}
+>
+  <slot />
+  <span class="self-center">
+    <slot name="icon">
+      <Icon name="mdi:arrow-top-right" />
+    </slot>
+  </span>
+</a>

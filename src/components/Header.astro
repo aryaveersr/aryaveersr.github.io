@@ -1,0 +1,23 @@
+---
+import Link from "./Link.astro";
+
+const links = [
+  { label: "Home", href: "/" },
+  { label: "Projects", href: "/projects" },
+  { label: "GitHub", href: "https://github.com/aryaveersr" },
+  { label: "Email", href: "mailto:me.aryaveer@gmail.com" },
+];
+---
+
+<header class="pt-24 pb-12">
+  <nav class="flex gap-8 text-sm">
+    {
+      links.map(({ label, href }) => (
+        <Link {href} class="font-sans">
+          <Fragment slot="icon" />
+          {label.toUpperCase()}
+        </Link>
+      ))
+    }
+  </nav>
+</header>

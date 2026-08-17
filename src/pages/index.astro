@@ -1,7 +1,46 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
+import Link from "@components/Link.astro";
+import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
+import ProjectList from "@components/ProjectList.astro";
+
+const projects = await getCollection("projects");
 ---
 
-<Layout>
-    <p>Hello, world!</p>
+<Layout class="flex flex-col gap-12">
+  <h1 class="-mb-4">Hi, I'm Aryaveer!</h1>
+  <section>
+    <h2 id="about">
+      <Link href="#about" class="gap-1 font-sans text-sm">
+        <Icon slot="icon" name="mdi:link" />
+        ABOUT
+      </Link>
+    </h2>
+    <p>
+      I am an aspiring software developer from India. This is my corner on the
+      internet where I (hope to) write stuff that might one day be useful to
+      someone. You can find most of my projects on {" "}
+      <Link href="https://github.com/aryaveersr">GitHub</Link>. You can also
+      reach me at {" "}
+      <Link href="mailto:aryaveersr@">me.aryaveer@gmail.com</Link>
+    </p>
+  </section>
+  <section>
+    <h2 id="projects">
+      <Link href="#projects" class="gap-1 font-sans text-sm">
+        <Icon slot="icon" name="mdi:link" />
+        PROJECTS
+      </Link>
+    </h2>
+    <p>
+      Here are some of the projects I've worked on in no particular order. A
+      (more) complete list {" "}
+      <Link href="/projects">can be found here.</Link>
+    </p>
+    <ProjectList projects={projects.filter((p) => p.data.pin)} heading="h3" />
+    <Link href="/projects" class="text-lg text-zinc-800">
+      View all projects
+    </Link>
+  </section>
 </Layout>
