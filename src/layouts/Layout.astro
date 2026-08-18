@@ -13,10 +13,31 @@ type Props = HTMLAttributes<"main">;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
+
+    <meta name="darkreader-lock" />
+    <script is:inline>
+      const html = document.documentElement;
+
+      const theme = (() => {
+        const savedPreference = localStorage?.getItem("theme") ?? "";
+        if (["dark", "light"].includes(savedPreference)) return savedPreference;
+
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+      })();
+
+      if (theme === "light") html.classList.remove("dark");
+      else html.classList.add("dark");
+
+      window.localStorage.setItem("theme", theme);
+      applyTheme();
+    </script>
+
     <title>AryaveerSR</title>
   </head>
   <body
-    class="bg-zinc-50 pb-16 font-serif text-xl leading-relaxed text-zinc-800"
+    class="bg-zinc-50 pb-16 font-serif text-xl leading-relaxed text-zinc-800 dark:bg-zinc-900 dark:text-zinc-100"
   >
     <div class="mx-auto max-w-3xl px-8">
       <Header />

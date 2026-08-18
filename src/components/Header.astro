@@ -1,5 +1,6 @@
 ---
-import Link from "./Link.astro";
+import { Icon } from "astro-icon/components";
+import Link from "@components/Link.astro";
 
 const links = [
   { label: "Home", href: "/" },
@@ -10,20 +11,38 @@ const links = [
 ---
 
 <header class="pt-24 pb-12">
-  <nav class="flex gap-8 text-sm">
+  <nav class="flex flex-wrap gap-x-8 gap-y-4 font-sans text-sm">
     {
       links.map(({ label, href }) => (
         <Link
           {href}
           icon={false}
-          class:list={[
-            "font-sans",
-            Astro.url.pathname == href && "text-zinc-950 underline",
-          ]}
+          class:list={[Astro.url.pathname == href && "text-zinc-950 underline"]}
         >
           {label.toUpperCase()}
         </Link>
       ))
     }
+    <button
+      id="theme-switch"
+      class="inline-flex cursor-pointer items-center gap-1 font-medium text-zinc-500 decoration-current hover:text-zinc-950 hover:underline dark:text-zinc-400 dark:hover:text-zinc-50"
+    >
+      <span class="dark:hidden">LIGHT</span>
+      <span class="hidden dark:block">DARK</span>
+      <Icon name="mdi:white-balance-sunny" class="-mb-px dark:hidden" />
+      <Icon name="mdi:moon-waxing-crescent" class="-mb-px hidden dark:block" />
+    </button>
   </nav>
 </header>
+
+<script>
+  const html = document.documentElement;
+
+  document.getElementById("theme-switch")!.addEventListener("click", () => {
+    html.classList.toggle("dark");
+    localStorage.setItem(
+      "theme",
+      html.classList.contains("dark") ? "dark" : "light",
+    );
+  });
+</script>

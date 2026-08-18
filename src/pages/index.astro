@@ -39,8 +39,6 @@ const projects = await getCollection("projects");
       <Link href="/projects">can be found here.</Link>
     </p>
     <ProjectList projects={projects.filter((p) => p.data.pin)} heading="h3" />
-    <Link href="/projects" class="text-lg text-zinc-800">
-      View all projects
-    </Link>
+    <Link href="/projects" class="text-lg">View all projects</Link>
   </section>
 </Layout>

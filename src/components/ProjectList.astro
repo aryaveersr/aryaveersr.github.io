@@ -30,7 +30,9 @@ const { projects, heading: Heading } = Astro.props;
             ))}
           </div>
         </div>
-        <p class="text-lg tracking-wide text-zinc-600">{description}</p>
+        <p class="text-lg tracking-wide text-zinc-600 dark:text-zinc-200">
+          {description}
+        </p>
       </li>
     ))
   }
