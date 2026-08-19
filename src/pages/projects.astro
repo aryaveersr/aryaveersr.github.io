@@ -8,19 +8,17 @@ import ProjectList from "@components/ProjectList.astro";
 const projects = await getCollection("projects");
 ---
 
-<Layout class="flex flex-col gap-12">
-  <section>
-    <h1 id="projects">
-      <Link href="#projects" class="gap-1 font-sans text-sm">
-        <Icon slot="icon" name="mdi:link" />
-        PROJECTS
-      </Link>
-    </h1>
-    <p>
-      Here are some of the projects I've worked on in no particular order. I
-      have a habit of abandoning projects though, so these are the ones that
-      pass a bare minimum threshold.
-    </p>
-    <ProjectList {projects} heading="h2" />
-  </section>
+<Layout>
+  <h1 id="projects">
+    <Link href="#projects" class="gap-1 font-sans text-sm">
+      <Icon slot="icon" name="mdi:link" />
+      PROJECTS
+    </Link>
+  </h1>
+  <p>
+    Here are some of the projects I've worked on in no particular order. I have
+    a habit of abandoning projects though, so these are the ones that pass a
+    bare minimum threshold.
+  </p>
+  <ProjectList {projects} heading="h2" />
 </Layout>
