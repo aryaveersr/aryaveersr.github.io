@@ -1,0 +1,35 @@
+---
+import Link from "@components/Link.astro";
+import { postHref, stringifyDate } from "@utils/posts";
+import type { HTMLTag } from "astro/types";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  posts: CollectionEntry<"posts">[];
+  heading: HTMLTag;
+}
+
+const { posts, heading: Heading } = Astro.props;
+---
+
+<ul class="flex list-disc flex-col gap-6 pt-8 pb-6 pl-4">
+  {
+    posts.map(({ id, data: { title, description, date_published } }) => (
+      <li>
+        <div class="xs:flex-row xs:items-center mb-2 flex flex-col justify-between">
+          <Heading class="leading-tight">
+            <Link href={postHref(id)} class="text-zinc-800">
+              {title}
+            </Link>
+          </Heading>
+          <time datetime={stringifyDate(date_published)} class="text-lg italic">
+            &mdash; {stringifyDate(date_published)}
+          </time>
+        </div>
+        <p class="text-lg tracking-wide text-zinc-600 dark:text-zinc-300">
+          {description}
+        </p>
+      </li>
+    ))
+  }
+</ul>
