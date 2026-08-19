@@ -1,6 +1,7 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 import { Icon } from "astro-icon/components";
+import { cn } from "@utils/cn";
 
 interface Props extends HTMLAttributes<"a"> {
   icon?: boolean;
@@ -11,11 +12,11 @@ const { icon = true, class: classNames, ...rest } = Astro.props;
 
 <a
   {...rest}
-  class:list={[
+  class={cn(
     "font-medium text-zinc-500 decoration-current hover:text-zinc-950 hover:underline dark:text-zinc-400 dark:hover:text-zinc-50",
     icon && "inline-flex items-baseline",
     classNames,
-  ]}
+  )}
 >
   <slot />
   {
