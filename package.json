@@ -13,11 +13,13 @@
     "lint": "eslint \"src/**/*.{js,ts,astro}\""
   },
   "dependencies": {
+    "@astrojs/markdown-satteri": "^0.3.7",
     "@iconify-json/mdi": "^1.2.3",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.2.3",
     "astro-icon": "^1.1.5",
     "clsx": "^2.1.1",
+    "satteri": "^0.10.5",
     "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.3.3"
   },
