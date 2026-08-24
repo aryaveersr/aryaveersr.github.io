@@ -5,13 +5,14 @@ import icon from "astro-icon";
 import { satteri } from "@astrojs/markdown-satteri";
 import { shiftHeadings } from "satteri-shift-headings";
 import { toc } from "satteri-toc";
+import { ifPost } from "@plugins/if-post";
 
 export default defineConfig({
   vite: { plugins: [tailwindcss()] },
   integrations: [icon()],
   markdown: {
     processor: satteri({
-      mdastPlugins: [shiftHeadings(1), toc()],
+      mdastPlugins: [ifPost(shiftHeadings(1), toc())],
     }),
   },
 });
