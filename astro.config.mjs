@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import { satteri } from "@astrojs/markdown-satteri";
 import { shiftHeadings } from "satteri-shift-headings";
-import { toc } from "@plugins/toc";
+import { toc } from "satteri-toc";
 
 export default defineConfig({
   vite: { plugins: [tailwindcss()] },
