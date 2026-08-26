@@ -1,7 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Link from "@components/Link.astro";
-import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 import ProjectList from "@components/ProjectList.astro";
 import PostList from "@components/PostList.astro";
@@ -14,10 +13,12 @@ const posts = await getCollection("posts");
   <h1 class="-mb-4">Hi, I'm Aryaveer!</h1>
   <section>
     <h2 id="about">
-      <Link href="#about" class="gap-1 font-sans text-sm">
-        <Icon slot="icon" name="mdi:link" />
+      <a
+        href="#about"
+        class="mb-4 block w-fit border-b-2 font-sans text-sm font-bold text-zinc-950 dark:text-zinc-50"
+      >
         ABOUT
-      </Link>
+      </a>
     </h2>
     <p>
       I am an aspiring software developer from India. This is my corner on the
@@ -30,10 +31,12 @@ const posts = await getCollection("posts");
   </section>
   <section>
     <h2 id="projects">
-      <Link href="#projects" class="gap-1 font-sans text-sm">
-        <Icon slot="icon" name="mdi:link" />
+      <a
+        href="#projects"
+        class="mb-4 block w-fit border-b-2 font-sans text-sm font-bold text-zinc-950 dark:text-zinc-50"
+      >
         PROJECTS
-      </Link>
+      </a>
     </h2>
     <p>
       Here are some of the projects I've worked on in no particular order. A
@@ -45,10 +48,12 @@ const posts = await getCollection("posts");
   </section>
   <section>
     <h2 id="posts">
-      <Link href="#posts" class="gap-1 font-sans text-sm">
-        <Icon slot="icon" name="mdi:link" />
+      <a
+        href="#posts"
+        class="mb-4 block w-fit border-b-2 font-sans text-sm font-bold text-zinc-950 dark:text-zinc-50"
+      >
         POSTS
-      </Link>
+      </a>
     </h2>
     <p>
       Here I (plan to) write about various topics I find interesting. These are
