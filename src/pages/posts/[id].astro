@@ -1,5 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import { stringifyDate } from "@utils/posts";
 import type { GetStaticPaths } from "astro";
 import { getCollection, render } from "astro:content";
 
@@ -18,9 +19,15 @@ const { Content } = await render(post);
 
 <Layout>
   <section class="pt-8 pb-24">
-    <h1 id={post.id} class="mb-4 text-4xl font-bold">
+    <h1 id={post.id} class="text-4xl font-bold">
       {post.data.title}
     </h1>
+    <time
+      datetime={stringifyDate(post.data.date_published)}
+      class="my-2 block text-lg text-zinc-500 italic"
+    >
+      {stringifyDate(post.data.date_published)}
+    </time>
     <p>{post.data.description}</p>
   </section>
   <article
