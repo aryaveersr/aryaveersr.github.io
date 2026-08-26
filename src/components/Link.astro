@@ -13,7 +13,7 @@ const { icon = true, class: classNames, ...rest } = Astro.props;
 <a
   {...rest}
   class={cn(
-    "font-medium text-zinc-500 decoration-current hover:text-zinc-950 hover:underline dark:text-zinc-400 dark:hover:text-zinc-50",
+    "font-medium underline decoration-current hover:text-zinc-600 dark:hover:text-zinc-400",
     icon && "inline-flex items-baseline",
     classNames,
   )}

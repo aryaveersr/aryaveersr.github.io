@@ -17,9 +17,7 @@ const { projects, heading: Heading } = Astro.props;
       <li>
         <div class="xs:flex-row xs:items-center mb-2 flex flex-col justify-between">
           <Heading class="leading-tight">
-            <Link href={links["github"]} class="text-zinc-800">
-              {name}
-            </Link>
+            <Link href={links["github"]}>{name}</Link>
           </Heading>
           <div class="flex items-center gap-3 text-sm sm:text-lg">
             {Object.entries(links)

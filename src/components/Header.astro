@@ -18,7 +18,9 @@ const links = [
         <Link
           {href}
           icon={false}
-          class:list={[Astro.url.pathname == href && "text-zinc-950 underline"]}
+          class:list={[
+            Astro.url.pathname == href && "text-zinc-500 no-underline",
+          ]}
         >
           {label.toUpperCase()}
         </Link>
@@ -26,7 +28,7 @@ const links = [
     }
     <button
       id="theme-switch"
-      class="inline-flex cursor-pointer items-center gap-1 font-medium text-zinc-500 decoration-current hover:text-zinc-950 hover:underline dark:text-zinc-400 dark:hover:text-zinc-50"
+      class="inline-flex cursor-pointer items-center gap-1 font-medium underline decoration-current hover:text-zinc-600 dark:hover:text-zinc-400"
     >
       <span class="dark:hidden">LIGHT</span>
       <span class="hidden dark:block">DARK</span>
