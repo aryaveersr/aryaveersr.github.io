@@ -4,8 +4,10 @@ import Link from "@components/Link.astro";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 import ProjectList from "@components/ProjectList.astro";
+import PostList from "@components/PostList.astro";
 
 const projects = await getCollection("projects");
+const posts = await getCollection("posts");
 ---
 
 <Layout class="flex flex-col gap-12">
@@ -40,5 +42,20 @@ const projects = await getCollection("projects");
     </p>
     <ProjectList projects={projects.filter((p) => p.data.pin)} heading="h3" />
     <Link href="/projects" class="text-lg">View all projects</Link>
+  </section>
+  <section>
+    <h2 id="posts">
+      <Link href="#posts" class="gap-1 font-sans text-sm">
+        <Icon slot="icon" name="mdi:link" />
+        POSTS
+      </Link>
+    </h2>
+    <p>
+      Here I (plan to) write about various topics I find interesting. These are
+      my most recent yappings. A (more) complete list {" "}
+      <Link href="/projects">can be found here.</Link>
+    </p>
+    <PostList {posts} heading="h3" />
+    <Link href="/posts" class="text-lg">View all posts</Link>
   </section>
 </Layout>
