@@ -23,7 +23,7 @@ const { projects, heading: Heading } = Astro.props;
           </Heading>
           <div class="flex items-center gap-3 text-sm sm:text-lg">
             {Object.entries(links)
-              .filter(([title, href]) => title != "github")
+              .filter(([title]) => title != "github")
               .map(([title, href], index) => (
                 <Fragment>
                   <Link {href} class="gap-px">
