@@ -12,7 +12,17 @@ export default defineConfig({
   integrations: [icon()],
   markdown: {
     processor: satteri({
-      mdastPlugins: [ifPost(shiftHeadings(1), toc())],
+      mdastPlugins: [
+        ifPost(
+          shiftHeadings(1),
+          toc({
+            fallback: {
+              text: "Table of Contents",
+              level: 2,
+            },
+          }),
+        ),
+      ],
     }),
   },
 });
