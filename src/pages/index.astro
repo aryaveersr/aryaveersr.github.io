@@ -41,7 +41,7 @@ const posts = await getCollection("posts");
       <Link href="/projects">can be found here.</Link>
     </p>
     <ProjectList projects={projects.filter((p) => p.data.pin)} heading="h3" />
-    <Link href="/projects" class="text-lg">View all projects</Link>
+    <Link href="/projects" class="text-sm sm:text-lg">View all projects</Link>
   </section>
   <section>
     <h2 id="posts">
@@ -56,6 +56,6 @@ const posts = await getCollection("posts");
       <Link href="/projects">can be found here.</Link>
     </p>
     <PostList {posts} heading="h3" />
-    <Link href="/posts" class="text-lg">View all posts</Link>
+    <Link href="/posts" class="text-sm sm:text-lg">View all posts</Link>
   </section>
 </Layout>

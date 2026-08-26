@@ -21,7 +21,7 @@ const { projects, heading: Heading } = Astro.props;
               {name}
             </Link>
           </Heading>
-          <div class="flex items-center gap-3 text-lg">
+          <div class="flex items-center gap-3 text-sm sm:text-lg">
             {Object.entries(links)
               .filter(([title, href]) => title != "github")
               .map(([title, href], index) => (
@@ -36,7 +36,7 @@ const { projects, heading: Heading } = Astro.props;
               ))}
           </div>
         </div>
-        <p class="text-lg tracking-wide text-zinc-600 dark:text-zinc-300">
+        <p class="text-sm tracking-wide text-zinc-600 sm:text-lg dark:text-zinc-300">
           {description}
         </p>
       </li>

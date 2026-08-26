@@ -22,11 +22,14 @@ const { posts, heading: Heading } = Astro.props;
               {title}
             </Link>
           </Heading>
-          <time datetime={stringifyDate(date_published)} class="text-lg italic">
+          <time
+            datetime={stringifyDate(date_published)}
+            class="text-sm italic sm:text-lg"
+          >
             &mdash; {stringifyDate(date_published)}
           </time>
         </div>
-        <p class="text-lg tracking-wide text-zinc-600 dark:text-zinc-300">
+        <p class="text-sm tracking-wide text-zinc-600 sm:text-lg dark:text-zinc-300">
           {description}
         </p>
       </li>

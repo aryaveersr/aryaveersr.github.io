@@ -24,14 +24,14 @@ const { Content } = await render(post);
     </h1>
     <time
       datetime={stringifyDate(post.data.date_published)}
-      class="my-2 block text-lg text-zinc-500 italic"
+      class="my-2 block text-sm text-zinc-500 italic sm:text-lg"
     >
       {stringifyDate(post.data.date_published)}
     </time>
     <p>{post.data.description}</p>
   </section>
   <article
-    class="prose prose-zinc prose-xl prose-p:leading-relaxed dark:prose-invert prose-li:my-0 prose-ul:my-0"
+    class="prose prose-zinc prose-base sm:prose-xl prose-p:leading-relaxed dark:prose-invert prose-li:my-0 prose-ul:my-0"
   >
     <Content />
   </article>
