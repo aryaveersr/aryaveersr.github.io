@@ -1,7 +1,8 @@
 ---
-title: First Blog Post
+title: Hello, world!
 description: The start of (hopefully) something good.
 date_published: 2026-08-19
+date_updated: 2026-08-28
 ---
 
 This is the first blog post on this website. Even though I'm primarily writing this to make sure everything works, I would like to use this page to outline what I plan to write about on this website.
