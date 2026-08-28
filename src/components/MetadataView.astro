@@ -1,7 +1,7 @@
 ---
 import { cn } from "@utils/cn";
-import { stringifyDate } from "@utils/posts";
 import type { HTMLAttributes } from "astro/types";
+import Date from "@components/Date.astro";
 
 interface Props extends HTMLAttributes<"div"> {
   items: { key: string; value: string | Date }[];
@@ -18,7 +18,7 @@ const { items, class: classNames, ...rest } = Astro.props;
         {typeof value == "string" ? (
           <span>{value}</span>
         ) : (
-          <time datetime={stringifyDate(value)}>{stringifyDate(value)}</time>
+          <Date date={value} />
         )}
       </div>
     ))

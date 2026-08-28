@@ -1,0 +1,14 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"time"> {
+  date: Date;
+}
+
+const { date, ...rest } = Astro.props;
+const formatted = date.toLocaleDateString("en-CA");
+---
+
+<time datetime={formatted} {...rest}>
+  {formatted}
+</time>

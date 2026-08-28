@@ -1,8 +1,9 @@
 ---
 import Link from "@components/Link.astro";
-import { postHref, stringifyDate } from "@utils/posts";
+import { postHref } from "@utils/posts";
 import type { HTMLTag } from "astro/types";
 import type { CollectionEntry } from "astro:content";
+import Date from "@components/Date.astro";
 
 interface Props {
   posts: CollectionEntry<"posts">[];
@@ -20,12 +21,7 @@ const { posts, heading: Heading } = Astro.props;
           <Heading class="leading-tight">
             <Link href={postHref(id)}>{title}</Link>
           </Heading>
-          <time
-            datetime={stringifyDate(date_published)}
-            class="text-sm italic sm:text-lg"
-          >
-            &mdash; {stringifyDate(date_published)}
-          </time>
+          <Date date={date_published} class="text-sm italic sm:text-lg" />
         </div>
         <p class="text-sm tracking-wide text-zinc-600 sm:text-lg dark:text-zinc-300">
           {description}
