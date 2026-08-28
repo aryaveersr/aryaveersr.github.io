@@ -1,0 +1,26 @@
+---
+import { cn } from "@utils/cn";
+import { stringifyDate } from "@utils/posts";
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {
+  items: { key: string; value: string | Date }[];
+}
+
+const { items, class: classNames, ...rest } = Astro.props;
+---
+
+<div class={cn("grid grid-cols-[auto_auto] gap-4", classNames)} {...rest}>
+  {
+    items.map(({ key, value }) => (
+      <div class="contents">
+        <span class="text-zinc-500">{key}</span>
+        {typeof value == "string" ? (
+          <span>{value}</span>
+        ) : (
+          <time datetime={stringifyDate(value)}>{stringifyDate(value)}</time>
+        )}
+      </div>
+    ))
+  }
+</div>
