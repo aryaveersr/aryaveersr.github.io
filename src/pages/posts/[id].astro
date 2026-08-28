@@ -18,13 +18,18 @@ const { Content } = await render(post);
 ---
 
 <Layout>
-  <section class="pt-8 pb-24">
+  <section class="pt-8 pb-16">
     <h1 id={post.id} class="text-4xl font-bold">
       {post.data.title}
     </h1>
 
     <MetadataView
-      items={[{ key: "Posted", value: post.data.date_published }]}
+      items={[
+        { key: "Posted", value: post.data.date_published },
+        ...(post.data.date_updated
+          ? [{ key: "Last Updated", value: post.data.date_updated }]
+          : []),
+      ]}
       class="my-4 w-fit"
     />
 

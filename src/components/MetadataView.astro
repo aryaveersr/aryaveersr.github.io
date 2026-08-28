@@ -10,7 +10,7 @@ interface Props extends HTMLAttributes<"div"> {
 const { items, class: classNames, ...rest } = Astro.props;
 ---
 
-<div class={cn("grid grid-cols-[auto_auto] gap-4", classNames)} {...rest}>
+<div class={cn("grid grid-cols-[auto_auto] gap-x-4", classNames)} {...rest}>
   {
     items.map(({ key, value }) => (
       <div class="contents">
