@@ -1,6 +1,6 @@
 ---
 title: Hello, world!
-description: Introductory post.
+description: A short introduction and my plans for this website.
 date_published: 2026-08-19
 date_updated: 2026-08-31
 ---
