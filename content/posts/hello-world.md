@@ -1,6 +1,6 @@
 ---
 title: Hello, world!
-description: The start of (hopefully) something good.
+description: Introductory post.
 date_published: 2026-08-19
 date_updated: 2026-08-31
 ---
