@@ -6,10 +6,12 @@ import { satteri } from "@astrojs/markdown-satteri";
 import { shiftHeadings } from "satteri-shift-headings";
 import { toc } from "satteri-toc";
 import { ifPost } from "@plugins/if-post";
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
+  site: "https://aryaveersr.github.io",
   vite: { plugins: [tailwindcss()] },
-  integrations: [icon()],
+  integrations: [icon(), sitemap()],
   markdown: {
     processor: satteri({
       mdastPlugins: [
