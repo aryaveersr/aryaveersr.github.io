@@ -4,4 +4,15 @@
       "language_servers": ["eslint", "..."],
     },
   },
+  "lsp": {
+    "harper-ls": {
+      "settings": {
+        "harper-ls": {
+          "linters": {
+            "UseTitleCase": false,
+          }
+        }
+      },
+    }
+  }
 }
