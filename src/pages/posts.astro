@@ -7,6 +7,14 @@ const posts = await getCollection("posts");
 ---
 
 <Layout>
+  <Fragment slot="head">
+    <title>Posts</title>
+    <meta
+      name="description"
+      content="My yappings on various topics which you may find interesting."
+    />
+  </Fragment>
+
   <h1 id="blog">
     <a
       href="#blog"

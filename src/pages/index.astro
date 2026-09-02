@@ -10,6 +10,14 @@ const posts = await getCollection("posts");
 ---
 
 <Layout class="flex flex-col gap-12">
+  <Fragment slot="head">
+    <title>AryaveerSR</title>
+    <meta
+      name="description"
+      content="I am an aspiring software developer from India. This is my corner on the internet where I write about stuff."
+    />
+  </Fragment>
+
   <h1 class="-mb-4">Hi, I'm Aryaveer!</h1>
   <section>
     <h2 id="about">
